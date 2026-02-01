@@ -3,6 +3,8 @@
 A LaTeX template thesis template for IUer at International University, Vietnam National University of Hochiminh City.
 Initially content is for Bachelor of Science theses at the School of Computer Science and Engineering, but can be adapted for other fields.
 
+![Title Page Preview](preview.png)
+
 ## Directory Structure
 
 ```
