@@ -1,0 +1,157 @@
+\documentclass[a4paper,hidelinks,12pt]{report}
+
+% Graphics and figures
+\usepackage{graphicx}
+\graphicspath{{images/}{./images/}{figures/}{./figures/}{./}{screenshots/}{./screenshots/}}
+\usepackage{float}
+\usepackage{grffile}
+
+% Page layout
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ left=30mm,
+ top=25mm,
+ bottom=20mm,
+ right=20mm
+}
+
+\usepackage{multirow}
+\usepackage{array}
+
+% Algorithms
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% Mathematics
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+% Text formatting and language
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+% Lists and enumerations
+\usepackage{enumitem}
+
+% Hyperlinks and references
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% Appendices
+\usepackage[toc,page]{appendix}
+
+% Captions
+\usepackage[labelfont=bf]{caption}
+
+% Code listings
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Define colors for syntax highlighting
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Configure listings style
+\lstdefinestyle{solidity}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{black}
+}
+
+% Additional language support
+\lstdefinelanguage{Solidity}{
+    keywords={pragma, solidity, contract, function, public, private, internal, external, view, pure, payable, returns, return, if, else, for, while, do, break, continue, throw, emit, event, modifier, mapping, address, uint, int, bool, bytes, string, struct, enum, new, delete, this, super, selfdestruct, require, assert, revert, memory, storage, calldata},
+    keywordstyle=\color{blue}\bfseries,
+    ndkeywords={msg, block, tx, now, gasprice, origin, sender, value, data, gas, length, push},
+    ndkeywordstyle=\color{blue}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{codegreen},
+    stringstyle=\color{codepurple},
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstset{style=solidity}
+
+% Tables
+\usepackage{makecell}
+
+% Text decorations
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+% Set section numbering depth
+\setcounter{secnumdepth}{5}
+
+\begin{document}
+\nocite{*}
+
+% Front matter
+\input{before_main/title}
+\input{before_main/approval}
+\input{before_main/acknowledge}
+
+% Table of contents
+\tableofcontents{}
+
+% Lists
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\pagebreak
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+
+\section*{List of Abbreviations}
+\begin{description}
+\item[ABC] — Example Abbreviation
+% Add your abbreviations here
+\end{description}
+
+% Main content
+\input{before_main/abstract}
+\input{tex/intro}
+\input{tex/related}
+\input{tex/method}
+\input{tex/implementation}
+\input{tex/result}
+\input{tex/discussion}
+\input{tex/conclusion}
+
+% Bibliography
+\bibliographystyle{ieeetr}
+\bibliography{reference}
+
+% Appendices
+\appendix
+\input{tex/appendix/appendix1}
+
+\end{document}

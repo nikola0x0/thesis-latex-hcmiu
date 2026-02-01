@@ -1,0 +1,80 @@
+\chapter{Additional Material}
+\label{app:additional}
+
+% Add supplementary material here such as:
+% - Detailed proofs
+% - Additional tables or figures
+% - Source code listings
+% - Survey instruments
+% - Raw data
+
+\section{Proof of Theorem}
+
+Add your detailed proofs here.
+
+\section{Additional Tables}
+
+\begin{table}[H]
+\centering
+\caption{Additional Data}
+\label{tab:app-data}
+\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+\hline
+Data & Data & Data \\
+\hline
+Data & Data & Data \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Source Code}
+
+% Example: Solidity smart contract
+\begin{lstlisting}[language=Solidity, caption=Sample Solidity Contract]
+pragma solidity ^0.8.19;
+
+contract ExampleContract {
+    address public owner;
+    uint256 public value;
+
+    event ValueUpdated(uint256 newValue);
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function setValue(uint256 _value) public {
+        require(msg.sender == owner, "Not authorized");
+        value = _value;
+        emit ValueUpdated(_value);
+    }
+}
+\end{lstlisting}
+
+% Example: Bash commands
+\begin{lstlisting}[language=bash, caption=Sample Build Commands]
+# Compile the project
+gcc -o program main.c
+
+# Run tests
+./run_tests.sh
+
+# Clean build files
+make clean
+\end{lstlisting}
+
+% Example: Python code
+\begin{lstlisting}[language=Python, caption=Sample Python Script]
+def calculate_average(numbers):
+    """Calculate average of a list of numbers."""
+    if not numbers:
+        return 0
+    return sum(numbers) / len(numbers)
+
+# Example usage
+scores = [85, 90, 78, 92]
+avg = calculate_average(scores)
+print(f"Average: {avg}")
+\end{lstlisting}
